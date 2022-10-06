@@ -46,12 +46,25 @@ h1 {
 .remove-item {
     display: flex;
     align-items: center;
-    padding: 0.5em 1em;
+    margin: 0.5em 1em;
 }
 
 .list-text {
     flex: 1;
     text-align: right;
+}
+
+.list-item.checked .fa-circle-dot,
+.list-item.checked .fa-circle-check,
+.list-item.checked .list-text {
+    color: #00a36c;
+}
+
+.list-item .fa-trash {
+    color: #f2886d;
+}
+.list-items-icons {
+    margin: 0.5em 1em;
 }
 .add-new-item {
     font-size: 1.1em;
@@ -92,4 +105,23 @@ h1 {
 
 .icon {
     display: none;
+}
+
+.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.sort-menu {
+    text-align: center;
+    border: none;
+}
+
+.sort-menu::-ms-expand {
+    display: none;
+}
+.sort-menu:focus {
+    outline: none;
 }

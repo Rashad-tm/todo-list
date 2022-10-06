@@ -19,6 +19,7 @@ userText.addEventListener("keyup", (e) => {
 });
 
 listArea.addEventListener("click", removeItemFromList);
+listArea.addEventListener("click", changeItemStatus);
 
 // Functions
 
@@ -29,24 +30,28 @@ function addUserInput() {
         createListItem.classList.add("list-item");
         createListItem.innerHTML = `
         <div class="change-status">
-                    <i class="fa-solid fa-circle-dot"></i>
+                <i class="fa-solid fa-circle-dot"></i>
                 </div>
                 <p class="list-text">${userText.value}</p>
-                    <i class="fa-solid fa-trash"></i>
-        </div>
+                <i class="fa-solid fa-circle-check list-items-icons"></i>
+                <i class="fa-solid fa-trash list-items-icons"></i>
+                </div>
         `;
         listArea.appendChild(createListItem);
         userText.value = "";
     } else showErrorMsg();
 }
 
+function changeItemStatus(e) {
+    if (e.target.classList.contains("fa-circle-check")) {
+        e.target.parentElement.classList.toggle("checked");
+    }
+}
 function removeItemFromList(e) {
     if (e.target.classList.contains("fa-trash")) {
         e.target.parentElement.remove();
     }
 }
-
-function changeItemStatus() {}
 
 //! این قسمت کد باید تبدیل شود تا تمیز تر بشود
 //? الان حال ندارم
